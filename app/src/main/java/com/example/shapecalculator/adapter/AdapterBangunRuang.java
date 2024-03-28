@@ -30,7 +30,7 @@ public class AdapterBangunRuang extends RecyclerView.Adapter<AdapterBangunRuang.
     @NonNull
     @Override
     public AdapterBangunRuang.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.item_view_bangundatar, parent, false);
+        View view = mInflater.inflate(R.layout.item_view_bangunruang, parent, false);
         return new ViewHolder(view);
     }
 
@@ -39,6 +39,7 @@ public class AdapterBangunRuang extends RecyclerView.Adapter<AdapterBangunRuang.
         ModelBangun items = this.listData.get(position);
 
         holder.tvNamaBangunRuang.setText(items.getNamaBangun());
+        holder.tvRumusBangunRuang.setText(items.getRumusBangun());
 
         Glide.with(holder.itemView.getContext())
                 .load(items.getGambarBangun())
@@ -53,12 +54,13 @@ public class AdapterBangunRuang extends RecyclerView.Adapter<AdapterBangunRuang.
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        TextView tvNamaBangunRuang;
+        TextView tvNamaBangunRuang, tvRumusBangunRuang;
         ImageView ivImageBangunRuang;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvNamaBangunRuang = itemView.findViewById(R.id.tvNamaBangunDatar);
-            ivImageBangunRuang = itemView.findViewById(R.id.ivImageBangunDatar);
+            tvNamaBangunRuang = itemView.findViewById(R.id.tvNamaBangunRuang);
+            tvRumusBangunRuang = itemView.findViewById(R.id.tvRumusBangunRuang);
+            ivImageBangunRuang = itemView.findViewById(R.id.ivImageBangunRuang);
             itemView.setOnClickListener(this);
         }
 

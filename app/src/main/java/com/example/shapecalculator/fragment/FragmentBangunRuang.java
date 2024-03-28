@@ -12,11 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.shapecalculator.KalkulatorBangunRuang;
 import com.example.shapecalculator.ModelBangun;
 import com.example.shapecalculator.R;
-import com.example.shapecalculator.adapter.AdapterBangunDatar;
 import com.example.shapecalculator.adapter.AdapterBangunRuang;
+import com.example.shapecalculator.bangunruang.Bola;
+import com.example.shapecalculator.bangunruang.Kerucut;
+import com.example.shapecalculator.bangunruang.Kubus;
+import com.example.shapecalculator.bangunruang.Tabung;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,19 +38,19 @@ public class FragmentBangunRuang extends Fragment implements AdapterBangunRuang.
                              Bundle savedInstanceState) {
 //        // Inflate the layout for this fragment
 //        return inflater.inflate(R.layout.fragment_bangun_ruang, container, false);
-        View view = inflater.inflate(R.layout.fragment_bangun_datar, container, false);
+        View view = inflater.inflate(R.layout.fragment_bangun_ruang, container, false);
 
         items = new ArrayList<ModelBangun>();
 
         // Add items to the list
-        items.add(new ModelBangun("Kubus",  "https://drive.google.com/uc?export=download&id=10Ddz_4-ioTbq_Tcr5g_mofxa8LCZtreO"));
-        items.add(new ModelBangun("Kerucut",  "https://cdn.pixabay.com/photo/2013/07/12/14/13/cone-148003_1280.png"));
-        items.add(new ModelBangun("Tabung",  "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Zylinder-1-tab.svg/232px-Zylinder-1-tab.svg.png"));
-        items.add(new ModelBangun("Bola",  "https://drive.google.com/uc?export=download&id=1GvJNTZC8sYJj8mkq8skQPNTdhQ_RiNkh"));
+        items.add(new ModelBangun("Kubus",  "https://drive.google.com/uc?export=download&id=10Ddz_4-ioTbq_Tcr5g_mofxa8LCZtreO", "6 x s²"));
+        items.add(new ModelBangun("Kerucut",  "https://cdn.pixabay.com/photo/2013/07/12/14/13/cone-148003_1280.png", "πr (r+s)"));
+        items.add(new ModelBangun("Tabung",  "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Zylinder-1-tab.svg/232px-Zylinder-1-tab.svg.png", "2πr (r+t)"));
+        items.add(new ModelBangun("Bola",  "https://drive.google.com/uc?export=download&id=1GvJNTZC8sYJj8mkq8skQPNTdhQ_RiNkh", "4πr²"));
 
 
         // Find the RecyclerView in the fragment's layout
-        recyclerView = view.findViewById(R.id.rvBangunDatar);
+        recyclerView = view.findViewById(R.id.rvBangunRuang);
 
         // Set up the RecyclerView
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -61,9 +63,29 @@ public class FragmentBangunRuang extends Fragment implements AdapterBangunRuang.
 
     @Override
     public void onItemClick(View view, int position) {
-        Intent intent = new Intent(getActivity(), KalkulatorBangunRuang.class);
-        intent.putExtra("nama", adapter.getItem(position).getNamaBangun());
-        startActivity(intent);
+
+        Intent intent;
+
+        switch (adapter.getItem(position).getNamaBangun()) {
+            case "Kubus":
+                intent = new Intent(getActivity(), Kubus.class);
+                startActivity(intent);
+                break;
+            case "Kerucut":
+                intent = new Intent(getActivity(), Kerucut.class);
+                startActivity(intent);
+                break;
+            case "Tabung":
+                intent = new Intent(getActivity(), Tabung.class);
+                startActivity(intent);
+                break;
+            case "Bola":
+                intent = new Intent(getActivity(), Bola.class);
+                startActivity(intent);
+                break;
+
+        }
+
         Toast.makeText(getActivity(), "You clicked " + adapter.getItem(position).getNamaBangun() + " on row number " + position, Toast.LENGTH_SHORT).show();
 
     }

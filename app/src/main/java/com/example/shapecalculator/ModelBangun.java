@@ -1,11 +1,12 @@
 package com.example.shapecalculator;
 
 public class ModelBangun {
-    String gambarBangun, namaBangun;
+    String gambarBangun, namaBangun, rumusBangun;
 
-    public ModelBangun(String namaBangun , String gambarBangun) {
+    public ModelBangun(String namaBangun , String gambarBangun, String rumusBangun) {
         this.namaBangun = namaBangun;
         this.gambarBangun = gambarBangun;
+        this.rumusBangun = rumusBangun;
     }
 
     public String getGambarBangun() {
@@ -14,5 +15,9 @@ public class ModelBangun {
 
     public String getNamaBangun() {
         return namaBangun;
+    }
+
+    public String getRumusBangun() {
+        return rumusBangun;
     }
 }

@@ -39,6 +39,7 @@ public class AdapterBangunDatar extends RecyclerView.Adapter<AdapterBangunDatar.
         ModelBangun items = this.listData.get(position);
 
         holder.tvNamaBangunDatar.setText(items.getNamaBangun());
+        holder.tvRumusBangunDatar.setText(items.getRumusBangun());
 
         Glide.with(holder.itemView.getContext())
                 .load(items.getGambarBangun())
@@ -53,11 +54,12 @@ public class AdapterBangunDatar extends RecyclerView.Adapter<AdapterBangunDatar.
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        TextView tvNamaBangunDatar;
+        TextView tvNamaBangunDatar, tvRumusBangunDatar;
         ImageView ivImageBangunDatar;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvNamaBangunDatar = itemView.findViewById(R.id.tvNamaBangunDatar);
+            tvRumusBangunDatar = itemView.findViewById(R.id.tvRumusBangunDatar);
             ivImageBangunDatar = itemView.findViewById(R.id.ivImageBangunDatar);
             itemView.setOnClickListener(this);
         }
