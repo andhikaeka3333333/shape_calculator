@@ -15,6 +15,9 @@
         android:theme="@style/Theme.ShapeCalculator"
         tools:targetApi="31">
         <activity
+            android:name=".bangunruang.Balok"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity

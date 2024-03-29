@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.shapecalculator.ModelBangun;
 import com.example.shapecalculator.R;
 import com.example.shapecalculator.adapter.AdapterBangunRuang;
+import com.example.shapecalculator.bangunruang.Balok;
 import com.example.shapecalculator.bangunruang.Bola;
 import com.example.shapecalculator.bangunruang.Kerucut;
 import com.example.shapecalculator.bangunruang.Kubus;
@@ -47,6 +48,7 @@ public class FragmentBangunRuang extends Fragment implements AdapterBangunRuang.
         items.add(new ModelBangun("Kerucut",  "https://cdn.pixabay.com/photo/2013/07/12/14/13/cone-148003_1280.png", "πr (r+s)"));
         items.add(new ModelBangun("Tabung",  "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Zylinder-1-tab.svg/232px-Zylinder-1-tab.svg.png", "2πr (r+t)"));
         items.add(new ModelBangun("Bola",  "https://drive.google.com/uc?export=download&id=1GvJNTZC8sYJj8mkq8skQPNTdhQ_RiNkh", "4πr²"));
+        items.add(new ModelBangun("Balok",  "https://drive.google.com/uc?export=download&id=1oWhQWxM9Gbn5LmzDqF5j40y20lwdVAl9", "2 × (pl + lt + pt)"));
 
 
         // Find the RecyclerView in the fragment's layout
@@ -83,7 +85,9 @@ public class FragmentBangunRuang extends Fragment implements AdapterBangunRuang.
                 intent = new Intent(getActivity(), Bola.class);
                 startActivity(intent);
                 break;
-
+            case "Balok":
+                intent = new Intent(getActivity(), Balok.class);
+                startActivity(intent);
         }
 
         Toast.makeText(getActivity(), "You clicked " + adapter.getItem(position).getNamaBangun() + " on row number " + position, Toast.LENGTH_SHORT).show();

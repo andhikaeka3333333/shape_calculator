@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".bangunruang.Kerucut"
+    tools:context=".bangunruang.Balok"
     android:background="@color/white">
 
     <androidx.cardview.widget.CardView
@@ -56,8 +56,8 @@
 
     <EditText
         android:layout_margin="15dp"
-        android:hint="Masukkan Sisi Atas "
-        android:id="@+id/edAtas"
+        android:hint="Masukkan Panjang"
+        android:id="@+id/edPanjang"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,13 +68,13 @@
 
     <EditText
         android:layout_margin="15dp"
-        android:hint="Masukkan Sisi Bawah"
-        android:id="@+id/edBawah"
+        android:hint="Masukkan Lebar"
+        android:id="@+id/edLebar"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/edAtas"
+        app:layout_constraintTop_toBottomOf="@+id/edPanjang"
         android:background="@drawable/rounded_background"
         android:inputType="numberDecimal|numberSigned"/>
 
@@ -86,7 +86,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/edBawah"
+        app:layout_constraintTop_toBottomOf="@+id/edLebar"
         android:background="@drawable/rounded_background"
         android:inputType="numberDecimal|numberSigned"/>
 
