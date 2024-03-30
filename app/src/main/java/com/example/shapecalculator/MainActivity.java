@@ -27,6 +27,20 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new FragmentBangunRuang())
                 .commit();
+
+        if (getIntent().getBooleanExtra("backToFragmentDatar", false)) {
+            Fragment fragment = new FragmentBangunDatar();
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.container, fragment)
+                    .commit();
+        }
+
+        if (getIntent().getBooleanExtra("backToFragmentRuang", false)) {
+            Fragment fragment = new FragmentBangunRuang();
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.container, fragment)
+                    .commit();
+        }
     }
 
     private BottomNavigationView.OnItemSelectedListener navListener =

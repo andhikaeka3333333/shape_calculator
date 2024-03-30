@@ -41,8 +41,7 @@ public class FragmentBangunDatar extends Fragment implements AdapterBangunDatar.
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_bangun_datar, container, false);
+
 
 
         View view = inflater.inflate(R.layout.fragment_bangun_datar, container, false);
@@ -97,6 +96,5 @@ public class FragmentBangunDatar extends Fragment implements AdapterBangunDatar.
                 startActivity(intent);
                 break;
         }
-        Toast.makeText(getActivity(), "You clicked " + adapter.getItem(position).getNamaBangun() + " on row number " + position, Toast.LENGTH_SHORT).show();
     }
 }

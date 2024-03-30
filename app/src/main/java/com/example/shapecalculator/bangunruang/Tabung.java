@@ -2,6 +2,7 @@ package com.example.shapecalculator.bangunruang;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.shapecalculator.MainActivity;
 import com.example.shapecalculator.R;
 
 public class Tabung extends AppCompatActivity {
@@ -18,18 +20,28 @@ public class Tabung extends AppCompatActivity {
     EditText edJari, edTinggi;
     Button buttonHitung, buttonReset;
     TextView tvHasil;
-    ImageView ivBangunRuang;
+    ImageView ivBangunRuang,ivBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tabung);
 
+        ivBack = findViewById(R.id.back);
         edJari = findViewById(R.id.edJari);
         edTinggi = findViewById(R.id.edTinggi);
         buttonHitung = findViewById(R.id.buttonHitung);
         buttonReset = findViewById(R.id.buttonReset);
         tvHasil = findViewById(R.id.tvHasil);
         ivBangunRuang = findViewById(R.id.ivLogo);
+
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Tabung.this, MainActivity.class);
+                intent.putExtra("backToFragmentRuang", true);
+                startActivity(intent);
+            }
+        });
 
         Glide.with(this).load("https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Zylinder-1-tab.svg/232px-Zylinder-1-tab.svg.png").into(ivBangunRuang);
         buttonHitung.setOnClickListener(new View.OnClickListener() {

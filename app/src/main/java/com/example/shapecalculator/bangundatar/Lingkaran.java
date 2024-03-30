@@ -2,6 +2,7 @@
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.shapecalculator.MainActivity;
 import com.example.shapecalculator.R;
 import com.example.shapecalculator.bangunruang.Bola;
 
@@ -19,17 +21,27 @@ import com.example.shapecalculator.bangunruang.Bola;
      EditText edJari;
      Button buttonHitung, buttonReset;
      TextView tvHasil;
-     ImageView ivBangunRuang;
+     ImageView ivBangunRuang,ivBack;
      @Override
      protected void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
          setContentView(R.layout.activity_lingkaran);
 
+         ivBack = findViewById(R.id.back);
          edJari = findViewById(R.id.edJari);
          buttonHitung = findViewById(R.id.buttonHitung);
          buttonReset = findViewById(R.id.buttonReset);
          tvHasil = findViewById(R.id.tvHasil);
          ivBangunRuang = findViewById(R.id.ivLogo);
+
+         ivBack.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 Intent intent = new Intent(Lingkaran.this, MainActivity.class);
+                 intent.putExtra("backToFragmentDatar", true);
+                 startActivity(intent);
+             }
+         });
 
          Glide.with(this).load("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Circle_-_black_simple.svg/800px-Circle_-_black_simple.svg.png").into(ivBangunRuang);
          buttonHitung.setOnClickListener(new View.OnClickListener() {

@@ -2,6 +2,7 @@ package com.example.shapecalculator.bangunruang;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,7 +12,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.shapecalculator.MainActivity;
 import com.example.shapecalculator.R;
+import com.example.shapecalculator.bangundatar.BelahKetupat;
 import com.example.shapecalculator.bangundatar.Trapesium;
 
 public class Balok extends AppCompatActivity {
@@ -19,12 +22,13 @@ public class Balok extends AppCompatActivity {
     EditText edTinggi, edPanjang, edLebar;
     Button buttonHitung, buttonReset;
     TextView tvHasil;
-    ImageView ivBangunRuang;
+    ImageView ivBangunRuang, ivBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_balok);
 
+        ivBack = findViewById(R.id.back);
         edPanjang = findViewById(R.id.edPanjang);
         edLebar = findViewById(R.id.edLebar);
         edTinggi = findViewById(R.id.edTinggi);
@@ -32,6 +36,15 @@ public class Balok extends AppCompatActivity {
         buttonReset = findViewById(R.id.buttonReset);
         tvHasil = findViewById(R.id.tvHasil);
         ivBangunRuang = findViewById(R.id.ivLogo);
+
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Balok.this, MainActivity.class);
+                intent.putExtra("backToFragmentRuang", true);
+                startActivity(intent);
+            }
+        });
 
         Glide.with(this).load("https://drive.google.com/uc?export=download&id=1oWhQWxM9Gbn5LmzDqF5j40y20lwdVAl9").into(ivBangunRuang);
         buttonHitung.setOnClickListener(new View.OnClickListener() {
