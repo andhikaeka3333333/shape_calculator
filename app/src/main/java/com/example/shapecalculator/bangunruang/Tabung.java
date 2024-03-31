@@ -54,7 +54,8 @@ public class Tabung extends AppCompatActivity {
                     double jari = Double.parseDouble(edJari.getText().toString());
                     double tinggi = Double.parseDouble(edTinggi.getText().toString());
                     double hasil = 2 * 3.14 * jari * (jari + tinggi);
-                    tvHasil.setText(hasil + "");
+                    String hasilString = String.format("%.2f", hasil);
+                    tvHasil.setText(hasilString);
                 }
             }
         });

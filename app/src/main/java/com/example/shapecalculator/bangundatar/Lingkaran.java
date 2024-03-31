@@ -52,8 +52,9 @@ import com.example.shapecalculator.bangunruang.Bola;
                  }
                  else {
                      double jari = Double.parseDouble(edJari.getText().toString());
-                     double hasil = 3.14 * jari * jari;
-                     tvHasil.setText(hasil + "");
+                     double hasil = Math.PI * jari * jari;
+                     String hasilString = String.format("%.2f", hasil);
+                     tvHasil.setText(hasilString);
                  }
              }
          });

@@ -52,7 +52,8 @@ public class Bola extends AppCompatActivity {
                 else {
                     double jari = Double.parseDouble(edJari.getText().toString());
                     double hasil = 4 * 3.14 * jari * jari;
-                    tvHasil.setText(hasil + "");
+                    String hasilString = String.format("%.2f", hasil);
+                    tvHasil.setText(hasilString);
                 }
             }
         });

@@ -54,7 +54,8 @@ public class Kerucut extends AppCompatActivity {
                     double jari = Double.parseDouble(edJari.getText().toString());
                     double selimut = Double.parseDouble(edSelimut.getText().toString());
                     double hasil = 3.14 * jari * (jari+selimut);
-                    tvHasil.setText(hasil + "");
+                    String hasilString = String.format("%.2f", hasil);
+                    tvHasil.setText(hasilString);
                 }
             }
         });
