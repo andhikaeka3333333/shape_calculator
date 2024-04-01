@@ -109,7 +109,8 @@
             android:backgroundTint="#FFAB40"
             android:text="Hitung"
             android:fontFamily="@font/inter"
-            android:layout_marginEnd="10dp"/>
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/buttonReset"
@@ -117,7 +118,8 @@
             android:layout_height="wrap_content"
             android:text="Reset"
             android:backgroundTint="#03A2CA"
-            android:layout_marginEnd="10dp"/>
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 
