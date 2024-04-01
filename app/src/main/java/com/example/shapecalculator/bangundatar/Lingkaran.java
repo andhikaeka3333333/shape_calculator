@@ -37,9 +37,7 @@ import com.example.shapecalculator.bangunruang.Bola;
          ivBack.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-                 Intent intent = new Intent(Lingkaran.this, MainActivity.class);
-                 intent.putExtra("backToFragmentDatar", true);
-                 startActivity(intent);
+                 onBackPressed();
              }
          });
 

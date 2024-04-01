@@ -37,9 +37,7 @@ public class Kerucut extends AppCompatActivity {
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Kerucut.this, MainActivity.class);
-                intent.putExtra("backToFragmentRuang", true);
-                startActivity(intent);
+                onBackPressed();
             }
         });
 

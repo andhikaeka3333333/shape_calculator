@@ -40,9 +40,7 @@ public class BelahKetupat extends AppCompatActivity {
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(BelahKetupat.this, MainActivity.class);
-                intent.putExtra("backToFragmentDatar", true);
-                startActivity(intent);
+                onBackPressed();
             }
         });
 

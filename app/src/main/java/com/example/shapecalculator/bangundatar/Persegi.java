@@ -37,9 +37,7 @@ public class Persegi extends AppCompatActivity {
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Persegi.this, MainActivity.class);
-                intent.putExtra("backToFragmentDatar", true);
-                startActivity(intent);
+                onBackPressed();
             }
         });
 

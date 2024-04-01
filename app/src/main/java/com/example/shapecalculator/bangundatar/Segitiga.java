@@ -38,9 +38,7 @@ public class Segitiga extends AppCompatActivity {
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Segitiga.this, MainActivity.class);
-                intent.putExtra("backToFragmentDatar", true);
-                startActivity(intent);
+                onBackPressed();
             }
         });
 

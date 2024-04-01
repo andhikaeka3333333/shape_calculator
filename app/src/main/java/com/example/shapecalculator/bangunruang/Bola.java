@@ -36,9 +36,7 @@ public class Bola extends AppCompatActivity {
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Bola.this, MainActivity.class);
-                intent.putExtra("backToFragmentRuang", true);
-                startActivity(intent);
+                onBackPressed();
             }
         });
 
